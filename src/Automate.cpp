@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Automate.h"
-#include"Etat.h"
+#include "Etat.h"
 
 Automate::Automate(string flux) 
 {
@@ -9,15 +8,30 @@ Automate::Automate(string flux)
   pileEtat.push(depart);
 }
 
-void Automate::run() 
-{
-    bool prochainEtat = true;
-    while(prochainEtat) {
-    Symbole* s = lexer->Consulter();
-       
-    }
 
+void Automate::run() {
+  int i=100000; 
+  Symbole *s;
+  while (i>0) {
+    s = lexer->Consulter();
+        bool nextState = pileEtat.top()->transition(*this, s);
+        i--;
+        if((*s==FIN && nextState)|| *pileSymbole.top()==ERREUR ){
+            i=0;
+            }
+        if(nextState) lexer->Avancer(); 
+      }
+
+      if (*pileSymbole.top() != ERREUR) {
+        int resultat = pileSymbole.top()->getValeur();
+        cout << "Expression correct" << endl << "Resultat : " << resultat << endl;
+        } 
+      else {
+        cout << "Syntaxe non reconnu : caractere invalide" << endl;
+        }
 }
+
+
 
 void Automate::decalage(Symbole *s, Etat *e) 
 {
@@ -27,5 +41,23 @@ void Automate::decalage(Symbole *s, Etat *e)
 
 void Automate::reduction(int n, Symbole *s)
 {
-    
+    for (int i =0; i<n; i++) {
+        delete(pileEtat.top());
+        pileEtat.pop();
+    }
+    pileEtat.top()->transition(*this, s);
+}
+
+Symbole * Automate::getTopSymbole() {
+    Symbole* s = pileSymbole.top();
+    return s;
+}
+
+void Automate::popSymbole() {
+    delete(pileSymbole.top());
+    pileSymbole.pop();
+}
+
+void Automate::popAndDestroySymbole() {
+    pileSymbole.pop();
 }
