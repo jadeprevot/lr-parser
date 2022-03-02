@@ -1,5 +1,7 @@
-#pragma once
+#ifndef SYMBOLE_H
+#define SYMBOLE_H
 
+#pragma once
 #include <string>
 using namespace std;
 
@@ -31,44 +33,44 @@ class Entier : public Symbole {
 
 class OpenPar : public Symbole {
    public :
-   OpenPar () : Symbole(OPENPAR) {};
-   ~OpenPar() {};
+   OpenPar () : Symbole(OPENPAR) {}
+   ~OpenPar() {}
    virtual void Affiche ();
 };
 
 class ClosePar : public Symbole {
    public :
-   ClosePar () : Symbole(CLOSEPAR) {};
-   ~ClosePar() {};
+   ClosePar () : Symbole(CLOSEPAR) {}
+   ~ClosePar() {}
    virtual void Affiche ();
 };
 
 class Plus : public Symbole {
    public :
-   Plus () : Symbole(PLUS) {};
-   ~Plus() {};
+   Plus () : Symbole(PLUS) {}
+   ~Plus() {}
    virtual void Affiche ();
 };
 
 class Mult : public Symbole {
    public :
-   Mult () : Symbole(MULT) {};
-   ~Mult() {};
+   Mult () : Symbole(MULT) { }
+   ~Mult() { }
    virtual void Affiche ();
 };
 
 
 class Fin : public Symbole {
    public :
-   Fin () : Symbole(FIN) {};
-   ~Fin() {};
+   Fin () : Symbole(FIN) {}
+   ~Fin() {}
    virtual void Affiche ();
 };
 
 class Erreur : public Symbole {
    public :
-   Erreur () : Symbole(ERREUR) {};
-   ~Erreur() {};
+   Erreur () : Symbole(ERREUR) {}
+   ~Erreur() {}
    virtual void Affiche ();
 };
 
@@ -84,8 +86,4 @@ protected:
   int valeur;
 };
 
-
-
-
-
-
+#endif // symbole_H
