@@ -1,6 +1,29 @@
+/******************************************************************************
+						   lexer  -  description
+							 -------------------
+début	   : 16.02.2022
+copyright   : (C) 2022 par Adam Chellaoui & Jade Prévôt
+e-mail	  : adam.chellaoui@insa-lyon.fr / jade.prevot@insa-lyon.fr
+******************************************************************************/
+
+//--- Réalisation de la classe <lexer> (fichier lexer.cpp) ----
+
+//--------------------------------------------------------------------- INCLUDE
+
+//------------------------------------------------------------- Include système
+
+//----------------------------------------------------------- Include personnel
 #include "lexer.h"
 
-Symbole * Lexer::Consulter() {
+//------------------------------------------------------------------ Constantes
+
+//---------------------------------------------------------------------- PUBLIC
+
+//---------------------------------------------------------- Méthodes publiques
+Symbole * Lexer::Consulter() 
+// Algorithme :
+//		Aucun.
+{
    if (!tampon) {
 
       if (tete==flux.length())
@@ -43,9 +66,11 @@ Symbole * Lexer::Consulter() {
       }
    }
    return tampon;
-}
+} //----- Fin de Consulter
 
-void Lexer::Avancer() {
+void Lexer::Avancer() 
+// Algorithme :
+//		Aucun.
+{
    tampon = nullptr;
-}
-
+} //----- Fin de Avancer

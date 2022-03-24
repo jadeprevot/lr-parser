@@ -1,31 +1,108 @@
-#include "symbole.h"
+/******************************************************************************
+						   symbole  -  description
+							 -------------------
+début	   : 16.02.2022
+copyright   : (C) 2022 par Adam Chellaoui & Jade Prévôt
+e-mail	  : adam.chellaoui@insa-lyon.fr / jade.prevot@insa-lyon.fr
+******************************************************************************/
+
+//--- Réalisation de la classe <symbole> (fichier symbole.cpp) ----
+
+//--------------------------------------------------------------------- INCLUDE
+
+//------------------------------------------------------------- Include système
 #include <iostream>
 
-void Symbole::Affiche() {
-   cout<<Etiquettes[ident];
-}
+//----------------------------------------------------------- Include personnel
+#include "symbole.h"
 
-void Entier::Affiche() {
+//------------------------------------------------------------------ Constantes
+
+//---------------------------------------------------------------------- PUBLIC
+
+//---------------------------------------------------------- Méthodes publiques
+void Symbole::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   cout<<Etiquettes[ident];
+} //----- Fin de Affiche
+
+void Entier::Affiche() 
+// Algorithme :
+//		Aucun.
+{
    Symbole::Affiche();
    cout<<"("<<valeur<<")";
-}
+} //----- Fin de Affiche
 
-int Entier::getValeur() { return valeur; }
+int Entier::getValeur() 
+// Algorithme :
+//		Aucun.
+{ 
+   return valeur; 
+} //----- Fin de getValeur
 
-int Symbole::getValeur() { return -1; }
 
-int Expression::getValeur() { return valeur; }
+int Symbole::getValeur() 
+// Algorithme :
+//		Aucun.
+{ 
+   return -1; 
+} //----- Fin de getValeur
 
-void OpenPar::Affiche() {Symbole::Affiche() ;}
+int Expression::getValeur() 
+// Algorithme :
+//		Aucun.
+{ 
+   return valeur; 
+} //----- Fin de getValeur
 
-void ClosePar::Affiche() {Symbole::Affiche() ;}
+void OpenPar::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
 
-void Plus::Affiche() {Symbole::Affiche() ;}
+void ClosePar::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
 
-void Mult::Affiche() {Symbole::Affiche() ;}
+void Plus::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
 
-void Fin::Affiche() {Symbole::Affiche() ;}
+void Mult::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
 
-void Erreur::Affiche() {Symbole::Affiche() ;}
+void Fin::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
 
-void Expression::Affiche() {Symbole::Affiche() ;}
+void Erreur::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
+
+void Expression::Affiche() 
+// Algorithme :
+//		Aucun.
+{
+   Symbole::Affiche();
+} //----- Fin de Affiche
