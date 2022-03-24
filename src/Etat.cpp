@@ -1,10 +1,32 @@
-#include "Etat.h"
-#include "symbole.h"
+/******************************************************************************
+						   Etat  -  description
+							 -------------------
+début	   : 16.02.2022
+copyright   : (C) 2022 par Adam Chellaoui & Jade Prévôt
+e-mail	  : adam.chellaoui@insa-lyon.fr / jade.prevot@insa-lyon.fr
+******************************************************************************/
+
+//--- Réalisation de la classe <Etat> (fichier Etat.cpp) ----
+
+//--------------------------------------------------------------------- INCLUDE
+
+//------------------------------------------------------------- Include système
 #include <iostream>
 
+//----------------------------------------------------------- Include personnel
+#include "Etat.h"
+#include "symbole.h"
+
+//------------------------------------------------------------------ Constantes
+
+//---------------------------------------------------------------------- PUBLIC
+
+//---------------------------------------------------------- Méthodes publiques
 Etat::Etat(string s) { nom=s; }
 
 bool Etat0::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case INT:
@@ -21,9 +43,11 @@ bool Etat0::transition(Automate &automate, Symbole *s)
         return false;  
     }
       return true;
-}
+} //----- Fin de transition
 
 bool Etat1::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case PLUS:
@@ -39,9 +63,11 @@ bool Etat1::transition(Automate &automate, Symbole *s)
         return false;  
     }
     return true;
-}
+} //----- Fin de transition
 
 bool Etat2::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch (*s) {
     case INT:
@@ -58,9 +84,11 @@ bool Etat2::transition(Automate &automate, Symbole *s)
         return false;
     }
   return true;
-}
+} //----- Fin de transition
 
 bool Etat3::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch (*s) {
     case PLUS:
@@ -82,9 +110,11 @@ bool Etat3::transition(Automate &automate, Symbole *s)
         return false;
     }
     return true;
-}
+} //----- Fin de transition
 
 bool Etat4::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch (*s) {
     case INT:
@@ -101,9 +131,11 @@ bool Etat4::transition(Automate &automate, Symbole *s)
         return false;
     }
   return true;
-}
+} //----- Fin de transition
 
 bool Etat5::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case INT:
@@ -120,9 +152,11 @@ bool Etat5::transition(Automate &automate, Symbole *s)
         return false;  
     }
   return true;
-}
+} //----- Fin de transition
 
 bool Etat6::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case PLUS:
@@ -139,9 +173,11 @@ bool Etat6::transition(Automate &automate, Symbole *s)
         return false;
     }  
   return true;
-}
+} //----- Fin de transition
 
 bool Etat7::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case PLUS:
@@ -168,9 +204,11 @@ bool Etat7::transition(Automate &automate, Symbole *s)
         return false;
     }  
   return true;
-}
+} //----- Fin de transition
 
 bool Etat8::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case PLUS :
@@ -194,9 +232,11 @@ bool Etat8::transition(Automate &automate, Symbole *s)
         return false;
     }
     return true;
-}
+} //----- Fin de transition
 
 bool Etat9::transition(Automate &automate, Symbole *s)
+// Algorithme :
+//		Aucun.
 {
     switch(*s) {
     case PLUS :
@@ -218,4 +258,4 @@ bool Etat9::transition(Automate &automate, Symbole *s)
         return false;
     }
     return true;
-}
+} //----- Fin de transition

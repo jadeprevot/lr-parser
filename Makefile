@@ -1,16 +1,17 @@
 CXX = g++
 CXXFLAGS = -ansi -pedantic -Wall -std=c++11
 LDFLAGS =
-EXEC = tp
+EXEC = lalr_parser
 SOURCE = src/
 BINARY = bin/
 SRC = $(wildcard $(SOURCE)*.cpp)
 HDR = $(wildcard $(SOURCE)*.h)
 OBJ = $(patsubst $(SOURCE)%.cpp,$(BINARY)%.o, $(SRC))
+$(shell   mkdir -p $(BINARY))
 
 all: $(EXEC)
 
-tp: $(OBJ) # édition des liens
+lalr_parser: $(OBJ) # édition des liens
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
 $(BINARY)%.o: $(SOURCE)%.cpp $(SOURCE)%.h # compilations classiques
